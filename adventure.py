@@ -15,24 +15,10 @@ class damage():
         self.ability = ability
         self.inventory = inventory
 
-goblin = enemy1("johnny", 100, 10)
-luke = damage("Luke", 100, 50, "Penguin Slap", [])
 
 
-
-
-print("battle")
-print(goblin.health - luke.damage)
-goblin.health = goblin.health - luke.damage
-if goblin.health <= 0:
-    print(f"{luke.name} wins")
-print(luke.health - goblin.damage)
-luke.health = luke.health - goblin.damage
-if luke.health <= 0:
-    print(f"{goblin.name} wins")
-print(goblin.health - luke.damage)
-goblin.health = goblin.health - luke.damage
-if goblin.health <= 0:
-    print(f"{luke.name} wins")
-
-print(luke.health)
+number = [0, 1, 2, 3, 4]
+luke = damage("Luke", 100, 50, random.choice(number), ["vial"])
+if number == ("0", "1", "2", "3", "4"):
+    luke.ability == ("penguin slap")
+print(luke.__dict__)
