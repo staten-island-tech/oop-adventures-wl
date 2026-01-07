@@ -7,6 +7,26 @@ class enemy1():
         self.health = health
         self.damage = damage
 
+class poison():
+    def __init__(self, nae, health, damage, ability, inventory):
+        self.name = name
+
+class support():
+    def __init__(self, name, health, damage, ability, inventory):
+        self.name = name
+        self.health = health
+        self.damage = damage
+        self.ability = ability
+        self.inventory = inventory
+
+class tank():
+    def __init__(self, name, health, damage, ability, inventory):
+        self.name = name
+        self.health = health
+        self.damage = damage
+        self.ability = ability
+        self.inventory = inventory
+
 class healer():
     def __init__(self, name, health, damage, ability, inventory):
         self.name = name
