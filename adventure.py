@@ -7,6 +7,14 @@ class enemy1():
         self.health = health
         self.damage = damage
 
+class healer():
+    def __init__(self, name, health, damage, ability, inventory):
+        self.name = name
+        self.health = health
+        self.damage = damage
+        self.ability = ability
+        self.inventory = inventory
+
 class damage():
     def __init__(self, name, health, damage, ability, inventory):
         self.name = name
@@ -21,3 +29,4 @@ class damage():
 
 luke = damage("Luke", 100, 50, "", ["Vial"])
 print(luke.__dict__)
+print("hello")
