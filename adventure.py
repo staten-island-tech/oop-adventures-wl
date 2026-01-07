@@ -14,11 +14,10 @@ class damage():
         self.damage = damage
         self.ability = ability
         self.inventory = inventory
+        number = [0, 1, 2, 3, 4]
+        random.choice(number)
+        if random.choice == ("0", "1", "2", "3", "4"):
+            ability == "penguin slap"
 
-
-
-number = [0, 1, 2, 3, 4]
-luke = damage("Luke", 100, 50, random.choice(number), ["vial"])
-if number == ("0", "1", "2", "3", "4"):
-    luke.ability == ("penguin slap")
+luke = damage("Luke", 100, 50, "", ["Vial"])
 print(luke.__dict__)
