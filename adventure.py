@@ -7,7 +7,11 @@ class enemy1():
         self.health = health
         self.damage = damage
 
-class damage():
+class poison():
+    def __init__(self, nae, health, damage, ability, inventory):
+        self.name = name
+
+class support():
     def __init__(self, name, health, damage, ability, inventory):
         self.name = name
         self.health = health
@@ -15,21 +19,34 @@ class damage():
         self.ability = ability
         self.inventory = inventory
 
-    def giveAbi(self, ability):
+class tank():
+    def __init__(self, name, health, damage, ability, inventory):
+        self.name = name
+        self.health = health
+        self.damage = damage
+        self.ability = ability
+        self.inventory = inventory
+
+class healer():
+    def __init__(self, name, health, damage, ability, inventory):
+        self.name = name
+        self.health = health
+        self.damage = damage
+        self.ability = ability
+        self.inventory = inventory
+
+class damage():
+    def __init__(self, name, health, damage, ability, inventory):
+        self.name = name
+        self.health = health
+        self.damage = damage
+        self.ability = ability
+        self.inventory = inventory
         number = [0, 1, 2, 3, 4]
-        self = damage("Luke", 100, 50, random.choice(number), ["vial"])
-        if number == ("0", "1", "2", "3", "4"):
-            self.ability == ("penguin slap")
-        else:
-            print("error")
-        print(self.__dict__)
+        random.choice(number)
+        if random.choice == ("0", "1", "2", "3", "4"):
+            ability == "penguin slap"
 
-giveAbi()
-
-
-
-# number = [0, 1, 2, 3, 4]
-# luke = damage("Luke", 100, 50, random.choice(number), ["vial"])
-# if number == ("0", "1", "2", "3", "4"):
-#     luke.ability == ("penguin slap")
-# print(luke.__dict__)
+luke = damage("Luke", 100, 50, "", ["Vial"])
+print(luke.__dict__)
+# print("hello")
