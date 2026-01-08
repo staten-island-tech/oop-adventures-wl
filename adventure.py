@@ -1,17 +1,13 @@
 import time
 import random
 
-class enemy1():
+class Enemy1():
     def __init__(self, name, health, damage):
         self.name = name
         self.health = health
         self.damage = damage
 
-class poison():
-    def __init__(self, nae, health, damage, ability, inventory):
-        self.name = name
-
-class support():
+class Poison():
     def __init__(self, name, health, damage, ability, inventory):
         self.name = name
         self.health = health
@@ -19,7 +15,7 @@ class support():
         self.ability = ability
         self.inventory = inventory
 
-class tank():
+class Support():
     def __init__(self, name, health, damage, ability, inventory):
         self.name = name
         self.health = health
@@ -27,7 +23,7 @@ class tank():
         self.ability = ability
         self.inventory = inventory
 
-class healer():
+class Tank():
     def __init__(self, name, health, damage, ability, inventory):
         self.name = name
         self.health = health
@@ -35,7 +31,15 @@ class healer():
         self.ability = ability
         self.inventory = inventory
 
-class damage():
+class Healer():
+    def __init__(self, name, health, damage, ability, inventory):
+        self.name = name
+        self.health = health
+        self.damage = damage
+        self.ability = ability
+        self.inventory = inventory
+
+class Damage():
     def __init__(self, name, health, damage, ability, inventory):
         self.name = name
         self.health = health
@@ -43,10 +47,18 @@ class damage():
         self.ability = ability
         self.inventory = inventory
         number = [0, 1, 2, 3, 4]
-        random.choice(number)
-        if random.choice == ("0", "1", "2", "3", "4"):
-            ability == "penguin slap"
+        giveAbi = random.choice(number)
+        if giveAbi == ("0"):
+            self.ability = "Penguin Slap"
+        elif giveAbi == ("1"):
+            self.ability = "Penguin Punch"
+        elif giveAbi == ("2"):
+            self.ability = "Penguin Strike"
+        elif giveAbi == ("3"):
+            self.ability = "Penguin Beak Attack"
+        elif giveAbi == ("4"):
+            self.ability = "Penguin Stomp"
 
-luke = damage("Luke", 100, 50, "", ["Vial"])
+luke = Damage("Luke", 100, 50, "", ["Vial"])
 print(luke.__dict__)
 print("hello")
