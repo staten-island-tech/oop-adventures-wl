@@ -14,7 +14,8 @@ class damage():
         self.damage = damage
         self.ability = ability
         self.inventory = inventory
-    def giveAbi(self):
+
+    def giveAbi(self, ability):
         number = [0, 1, 2, 3, 4]
         self = damage("Luke", 100, 50, random.choice(number), ["vial"])
         if number == ("0", "1", "2", "3", "4"):
@@ -22,7 +23,6 @@ class damage():
         else:
             print("error")
         print(self.__dict__)
-
 
 giveAbi()
 
