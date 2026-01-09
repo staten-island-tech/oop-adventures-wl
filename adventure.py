@@ -40,6 +40,27 @@ class Bunny():
         self.ability = ability
         self.inventory = inventory
 
+
+abilities = [
+    {"name":"Penguin Slap", "damage":25,},
+    {"name":"Penguin Punch", "damage":40,},
+    {"name":"Penguin Strike"s, "damage":50,},
+    {"name":"Penguin Beak Attack", "damage":67,},
+    {"name":"Penguin Stomp", "damage":50,},
+    {"name":"Penguin Waddle Away", "damage":50,},
+    
+
+
+
+
+]
+
+
+
+
+
+
+
 #Penguin is damage
 class Penguin():
     def __init__(self, name, health, damage, ability, inventory):
