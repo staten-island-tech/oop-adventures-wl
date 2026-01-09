@@ -2,17 +2,17 @@
 class Penguin():
     def __init__(self, name, health, damage, shield, ability, inventory):
         ability = [
-            {"Name": "Penguin Slap"},
-            "Penguin Punch",
-            "Penguin Slide",
-            "Penguin Beak Attack",
-            "Penguin Stomp"
+            {"name":"Penguin Slap", "damage":25,},
+            {"name":"Penguin Punch", "damage":40,},
+            {"name":"Penguin Strike", "damage":50,},
+            {"name":"Penguin Beak Attack", "damage":67,},
+            {"name":"Penguin Stomp", "damage":50,},
         ]
         self.name = name
         self.health = health
         self.damage = damage
         self.shield = shield
-        self.ability = ability
+        self.ability = ability[2]
         self.inventory = inventory
 
 luke = Penguin("Luke", 100, 50, 0, "", [""])
