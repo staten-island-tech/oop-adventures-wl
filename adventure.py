@@ -57,6 +57,8 @@ class Penguin():
         self.ability = giveAbi
         self.inventory = inventory
 
+#battle
+
 luke = Penguin("Luke", 100, 50, "", ["Vial"])
 print(luke.__dict__)
 print("hello")
