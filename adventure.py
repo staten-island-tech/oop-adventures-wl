@@ -21,8 +21,7 @@ class Falcon():
         self.health = health
         self.damage = damage
         self.shield = shield
-        giveabi = random.choice(ability)
-        self.ability = giveabi
+        self.ability = ability
         self.inventory = inventory
 
 #Snake is poison
@@ -38,8 +37,7 @@ class Snake():
         self.health = health
         self.damage = damage
         self.shield = shield
-        giveabi = random.choice(ability)
-        self.ability = giveabi
+        self.ability = ability
         self.inventory = inventory
 
 #Frog is support
@@ -54,8 +52,7 @@ class Frog():
         self.health = health
         self.damage = damage
         self.shield = shield
-        giveabi = random.choice(ability)
-        self.ability = giveabi
+        self.ability = ability
         self.inventory = inventory
 
 #Shark is tank
@@ -72,8 +69,7 @@ class Shark():
         self.health = health
         self.damage = damage
         self.shield = shield
-        giveabi = random.choice(ability)
-        self.ability = giveabi
+        self.ability = ability
         self.inventory = inventory
 
 #Bunny is healer
@@ -88,8 +84,7 @@ class Bunny():
         self.health = health
         self.damage = damage
         self.shield = shield
-        giveabi = random.choice(ability)
-        self.ability = giveabi
+        self.ability = ability
         self.inventory = inventory
 
 #Penguin is damage
@@ -106,8 +101,7 @@ class Penguin():
         self.health = health
         self.damage = damage
         self.shield = shield
-        giveabi = random.choice(ability)
-        self.ability = giveabi
+        self.ability = ability
         self.inventory = inventory
 
 luke = Penguin("Luke", 100, 50, 0, "", [""])
