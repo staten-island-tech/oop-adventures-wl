@@ -1,17 +1,13 @@
 import time
 import random
 
-class enemy1():
+class Enemy1():
     def __init__(self, name, health, damage):
         self.name = name
         self.health = health
         self.damage = damage
 
-class poison():
-    def __init__(self, nae, health, damage, ability, inventory):
-        self.name = name
-
-class support():
+class Poison():
     def __init__(self, name, health, damage, ability, inventory):
         self.name = name
         self.health = health
@@ -19,7 +15,7 @@ class support():
         self.ability = ability
         self.inventory = inventory
 
-class tank():
+class Support():
     def __init__(self, name, health, damage, ability, inventory):
         self.name = name
         self.health = health
@@ -27,7 +23,7 @@ class tank():
         self.ability = ability
         self.inventory = inventory
 
-class healer():
+class Tank():
     def __init__(self, name, health, damage, ability, inventory):
         self.name = name
         self.health = health
@@ -35,19 +31,32 @@ class healer():
         self.ability = ability
         self.inventory = inventory
 
-class damage():
+#Bunny is healer
+class Bunny():
     def __init__(self, name, health, damage, ability, inventory):
         self.name = name
         self.health = health
         self.damage = damage
         self.ability = ability
         self.inventory = inventory
-        number = [0, 1, 2, 3, 4]
-        ability 
-        random.choice(number)
-        if random.choice == ("0", "1", "2", "3", "4"):
-            ability == "penguin slap"
 
-luke = damage("Luke", 100, 50, "2", ["Vial"])
+#Penguin is damage
+class Penguin():
+    def __init__(self, name, health, damage, ability, inventory):
+        ability = [
+            "Penguin Slap",
+            "Penguin Punch",
+            "Penguin Strike",
+            "Penguin Beak Attack",
+            "Penguin Stomp"
+        ]
+        self.name = name
+        self.health = health
+        self.damage = damage
+        giveAbi = random.choice(ability)
+        self.ability = giveAbi
+        self.inventory = inventory
+
+luke = Penguin("Luke", 100, 50, "", ["Vial"])
 print(luke.__dict__)
-# print("hello")
+print("hello")
