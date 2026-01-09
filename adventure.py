@@ -7,6 +7,22 @@ class Enemy1():
         self.health = health
         self.damage = damage
 
+#Cat is hypnotist
+class Cat():
+    def __init__(self, name, health, damage, shield, ability, inventory):
+        ability = [
+            "Cat Meow",
+            "Cat Claws",
+            "Cat Eyes",
+            "Angry Cat Attack"
+        ]
+        self.name = name
+        self.health = health
+        self.damage = damage
+        self.shield = shield
+        self.ability = ability
+        self.inventory = inventory
+
 #Falcon is sniper
 class Falcon():
     def __init__(self, name, health, damage, shield, ability, inventory):
