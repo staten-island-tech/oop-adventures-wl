@@ -153,5 +153,9 @@ print(luke.__dict__)
 
 def battle():
     print(f"{luke.name} is now fighting {goblin.name}!")
+    time.sleep(1)
+    action = input("What will you do? ")
+    print("1. Use normal attack")
+    
 
 battle()
