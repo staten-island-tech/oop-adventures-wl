@@ -1,6 +1,7 @@
 import random
 import time
 
+#Wow an enemy
 class Enemy:
     def __init__(self, name, health, damage):
         self.name = name
