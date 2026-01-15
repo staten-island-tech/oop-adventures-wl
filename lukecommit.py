@@ -167,22 +167,31 @@ def battle():
     action = int(input("Write 1, 2, 3, or 4: "))
     if action == 1:
         print(f"{character.name} did {character.damage} to {goblin.name}!")
-        goblin.health = goblin.health - character.damage
+        goblin.heal = goblin.heal - character.damage
         time.sleep(2)
-        print(f"{goblin.name} is now at {goblin.health}.")
-        if goblin.health <= 0:
+        print(f"{goblin.name} is now at {goblin.heal}.")
+        if goblin.heal <= 0:
             print(f"{goblin.name} has been defeated!")
             
     elif action == 2:
         if not character.inventory:
             print("There is nothing in your inventory.")
-    
+
     elif action == 3:
-        for i, ability in enumerate(character.abilities, start = 1):
-            print(f"{i}. {ability}")
-        chooseability = int(input("Which ability would you like to use? "))
-        if chooseability == 1:
-            print("cool")
+        for i, ability in enumerate(character.abilities, start=1):
+            print(f"{i}. {ability['abilityName']} (Damage: {ability['Damage']}, Heal: {ability['Heal']})")
+
+        chooseability = int(input("Which ability would you like to use? ")) - 1
+        chosen = character.abilities[chooseability]
+
+        goblin.heal -= chosen["Damage"]
+        character.heal += chosen["Heal"]
+
+        print(f"{character.name} used {chosen['abilityName']}!")
+        time.sleep(2)
+        print(f"{goblin.name} is now at {goblin.heal} heal.")
+        time.sleep(2)
+        print(f"{character.name} is now at {character.heal} heal.")
     
     elif action == 4:
         print("I'm going to roast you.")
@@ -190,11 +199,11 @@ def battle():
     time.sleep(3)
     print(f"{goblin.name} is now attacking!")
     time.sleep(2)
-    print(f"{goblin.name} did {goblin.damage} to {character.name}!")
-    character.health = character.health - goblin.damage
+    print(f"{goblin.name} did {goblin.damage} damage to {character.name}!")
+    character.heal = character.heal - goblin.damage
     time.sleep(2)
-    print(f"{character.name} is now at {character.health}.")
-    if character.health <= 0:
+    print(f"{character.name} is now at {character.heal} heal.")
+    if character.heal <= 0:
         print(f"{character.name} has been defeated!")
         
 
