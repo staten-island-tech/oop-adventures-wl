@@ -182,13 +182,6 @@ def battle():
     elif action == 2:
         if not character.inventory:
             print("There is nothing in your inventory.")
-    
-#    elif action == 3:
-#        for i, ability in enumerate(character.abilities, start = 1):
-#            print(f"{i}. {ability}")
-#        chooseability = int(input("Which ability would you like to use? "))
-#        if chooseability == 1:
-#            print("cool")
 
     elif action == 3:
         for i, ability in enumerate(character.abilities, start=1):
