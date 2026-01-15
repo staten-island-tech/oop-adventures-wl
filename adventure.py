@@ -121,41 +121,79 @@ class Penguin():
         self.abilities = abilities
         self.inventory = inventory
 
+while True:
+    classify = input("What class would you like to be? Damage, Tank, Healer, Support, Poison, Sniper, Hypnotist. ").lower()
+    if classify == ("damage"):
+        naming = input("What is your name? ")
+        luke = Penguin(naming, 100, 10, 0, "", [""])
+        break
+    if classify == ("tank"):
+        naming = input("What is your name? ")
+        luke = Shark(naming, 100, 10, 0, "", [""])
+        break
+    elif classify == ("healer"):
+        naming = input("What is your name? ")
+        luke = Bunny(naming, 100, 10, 0, "", [""])
+        break
+    elif classify == ("support"):
+        naming = input("What is your name? ")
+        luke = Frog(naming, 100, 10, 0, "", [""])
+        break
+    elif classify == ("poison"):
+        naming = input("What is your name? ")
+        luke = Snake(naming, 100, 10, 0, "", [""])
+        break
+    elif classify == ("sniper"):
+        naming = input("What is your name? ")
+        luke = Falcon(naming, 100, 10, 0, "", [""])
+        break
+    elif classify == ("hypnotist"):
+        naming = input("What is your name? ")
+        luke = Cat(naming, 100, 10, 0, "", [""])
+        break
+    else:
+        print("Class not found")
 
-classify = input("What class would you like to be? Damage, Tank, Healer, Support, Poison, Sniper, Hypnotist. ")
-if classify == ("Damage") or ("damage"):
-    naming = input("What is your name? ")
-    luke = Penguin(naming, 100, 10, 0, "", [""])
-if classify == ("Tank") or ("tank"):
-    naming = input("What is your name? ")
-    luke = Shark(naming, 100, 10, 0, "", [""])
-elif classify == ("Healer") or ("healer"):
-    naming = input("What is your name? ")
-    luke = Bunny(naming, 100, 10, 0, "", [""])
-elif classify == ("Support") or ("support"):
-    naming = input("What is your name? ")
-    luke = Frog(naming, 100, 10, 0, "", [""])
-elif classify == ("Poison") or ("poison"):
-    naming = input("What is your name? ")
-    luke = Snake(naming, 100, 10, 0, "", [""])
-elif classify == ("Sniper") or ("sniper"):
-    naming = input("What is your name? ")
-    luke = Falcon(naming, 100, 10, 0, "", [""])
-elif classify == ("Hypnotist") or ("hypnotist"):
-    naming = input("What is your name? ")
-    luke = Cat(naming, 100, 10, 0, "", [""])
-else:
-    print("Class not found")
-
-goblin = Enemy("Goblin", 75, 10)
 print(luke.__dict__)
 
+print("Game starting...")
+time.sleep(3)
+goblin = Enemy("Goblin", 75, 10)
 
 def battle():
     print(f"{luke.name} is now fighting {goblin.name}!")
-    time.sleep(1)
-    action = input("What will you do? ")
+    time.sleep(2)
+    print(f"{luke.name} is now attacking!")
+    print(f"What will {luke.name} do? ")
     print("1. Use normal attack")
+    print("2. Use item in inventory")
+    print("3. Use ability")
+    print("4. Run away")
+    action = int(input("Write 1, 2, 3, or 4: "))
+    if action == 1:
+        while True:
+            print(f"{luke.name} did {luke.damage} to {goblin.name}!")
+            goblin.health = goblin.health - luke.damage
+            time.sleep(2)
+            print(f"{goblin.name} is now at {goblin.health}.")
+            if goblin.health <= 0:
+                print(f"{goblin.name} has been defeated!")
+                break
+    elif action == 2:
+        if not luke.inventory:
+            print("There is nothing in your inventory.")
     
+    elif action == 3:
+        for i, ability in enumerate(luke.abilities, start = 1):
+            print(f"{i}. {ability}")
+        chooseability = int(input("Which ability would you like to use? "))
+        if chooseability == 1:
+            print("cool")
+    
+    elif action == 4:
+        print("I'm going to roast you.")
+
+    time.sleep(3)
+    print(f"{goblin.name} is now attacking!")
 
 battle()
