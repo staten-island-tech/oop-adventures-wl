@@ -23,8 +23,8 @@ class Cat(Character):
         super().__init__(name, health, damage, shield, inventory)
         self.abilities = [
             {"abilityName": "Cat Meow", "Damage": 0, "Heal": 25},
-            {"abilityName": "Cat Claws", "Damage": 50, "Heal": 0},
             {"abilityName": "Cat Eyes", "Damage": random.randint(0, 67), "Heal": 0},
+            {"abilityName": "Cat Claws", "Damage": 50, "Heal": 0},
             {"abilityName": "Angry Cat Attack", "Damage": 75, "Heal": 0}
         ]
 
@@ -133,7 +133,7 @@ time.sleep(2)
 
 print("Game starting...")
 time.sleep(2)
-goblin = Enemy("Goblin", 500, 30)
+goblin = Enemy("Goblin", 150, 25)
 
 def battle():
     print(f"{character.name} is now fighting {goblin.name}!")
