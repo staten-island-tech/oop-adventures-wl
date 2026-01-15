@@ -1,117 +1,98 @@
 import random
 import time
-#Wow an enemy
-class Enemy():
+
+class Enemy:
     def __init__(self, name, health, damage):
         self.name = name
         self.health = health
         self.damage = damage
 
-#Cat is hypnotist
-class Cat():
+class Character:
     def __init__(self, name, health, damage, shield, inventory):
-        self.abilities = [
-            {"abilityName":"Cat Meow","Damage":0,"Heal":25,},
-            {"abilityName":"Cat Claws","Damage":50,"Heal":0,},
-            {"abilityName":"Cat Eyes","Damage":random.randint(0,67),"Heal":0,},
-            {"abilityName":"Angry Cat Attack","Damage":75,"Heal":0,}
-        ]
         self.name = name
         self.health = health
         self.damage = damage
         self.shield = shield
         self.inventory = inventory
+        self.abilities = []
+
+# Cat is hypnotist
+class Cat(Character):
+    def __init__(self, name, health, damage, shield, inventory):
+        super().__init__(name, health, damage, shield, inventory)
+        self.abilities = [
+            {"abilityName": "Cat Meow", "Damage": 0, "Heal": 25},
+            {"abilityName": "Cat Claws", "Damage": 50, "Heal": 0},
+            {"abilityName": "Cat Eyes", "Damage": random.randint(0, 67), "Heal": 0},
+            {"abilityName": "Angry Cat Attack", "Damage": 75, "Heal": 0}
+        ]
 
 #Falcon is sniper
-class Falcon():
+class Falcon(Character):
     def __init__(self, name, health, damage, shield, inventory):
+        super().__init__(name, health, damage, shield, inventory)
         self.abilities = [
-            {"abilityName":"Falcon Dive","Damage":75,"Heal":0,},
-            {"abilityName":"Falcon Feathers","Damage":20,"Heal":0,},
-            {"abilityName":"Falcon Screech","Damage":50,"Heal":0,},
-            {"abilityName":"Falcon Claw","Damage":40,"Heal":0,},
-            {"abilityName":"Falcon Beak","Damage":40,"Heal":0,}
+            {"abilityName": "Falcon Dive", "Damage": 75, "Heal": 0},
+            {"abilityName": "Falcon Feathers", "Damage": 20, "Heal": 0},
+            {"abilityName": "Falcon Screech", "Damage": 50, "Heal": 0},
+            {"abilityName": "Falcon Claw", "Damage": 40, "Heal": 0},
+            {"abilityName": "Falcon Beak", "Damage": 40, "Heal": 0}
         ]
-        self.name = name
-        self.health = health
-        self.damage = damage
-        self.shield = shield
-        self.inventory = inventory
 
 #Snake is poison
-class Snake():
+class Snake(Character):
     def __init__(self, name, health, damage, shield, inventory):
+        super().__init__(name, health, damage, shield, inventory)
         self.abilities = [
-            {"abilityName":"Snake Venom","Damage":33,"Heal":0,},
-            {"abilityName":"Snake Crush","Damage":40,"Heal":0,},
-            {"abilityName":"Snake Fangs","Damage":40,"Heal":0,},
-            {"abilityName":"Snake Hiss","Damage":20,"Heal":10,}
+            {"abilityName": "Snake Venom", "Damage": 33, "Heal": 0},
+            {"abilityName": "Snake Crush", "Damage": 40, "Heal": 0},
+            {"abilityName": "Snake Fangs", "Damage": 40, "Heal": 0},
+            {"abilityName": "Snake Hiss", "Damage": 20, "Heal": 10}
         ]
-        self.name = name
-        self.health = health
-        self.damage = damage
-        self.shield = shield
-        self.inventory = inventory
 
 #Frog is support
-class Frog():
+class Frog(Character):
     def __init__(self, name, health, damage, shield, inventory):
+        super().__init__(name, health, damage, shield, inventory)
         self.abilities = [
-            {"abilityName":"Frog Boost","Damage":33,"Heal":0,},
-            {"abilityName":"Frog Assist","Damage":20,"Heal":30},
-            {"abilityName":"Frog Vial","Damage":10,"Heal":random.randint(50,67),}
+            {"abilityName": "Frog Boost", "Damage": 33, "Heal": 0},
+            {"abilityName": "Frog Assist", "Damage": 20, "Heal": 30},
+            {"abilityName": "Frog Vial", "Damage": 10, "Heal": random.randint(50, 67)}
         ]
-        self.name = name
-        self.health = health
-        self.damage = damage
-        self.shield = shield
-        self.inventory = inventory
 
 #Shark is tank
-class Shark():
+class Shark(Character):
     def __init__(self, name, health, damage, shield, inventory):
+        super().__init__(name, health, damage, shield, inventory)
         self.abilities = [
-            {"abilityName":"Shark Attack","Damage":50,"Heal":0,},
-            {"abilityName":"Shark Fin","Damage":45,"Heal":30},
-            {"abilityName":"Shark Tail Swing","Damage":25,"Heal":25,},
-            {"abilityName":"Shark Skin","Damage":33,"Heal":0,},
-            {"abilityName":"Shark Teeth","Damage":67,"Heal":1}
+            {"abilityName": "Shark Attack", "Damage": 50, "Heal": 0},
+            {"abilityName": "Shark Fin", "Damage": 45, "Heal": 30},
+            {"abilityName": "Shark Tail Swing", "Damage": 25, "Heal": 25},
+            {"abilityName": "Shark Skin", "Damage": 33, "Heal": 0},
+            {"abilityName": "Shark Teeth", "Damage": 67, "Heal": 1}
         ]
-        self.name = name
-        self.health = health
-        self.damage = damage
-        self.shield = shield
-        self.inventory = inventory
 
-#Bunny is Healer
-class Bunny():
+#Bunny is healer
+class Bunny(Character):
     def __init__(self, name, health, damage, shield, inventory):
+        super().__init__(name, health, damage, shield, inventory)
         self.abilities = [
-            {"abilityName":"Bunny Heal","Damage":0,"Heal":50,},
-            {"abilityName":"Bunny Shield","Damage":25,"Heal":30},
-            {"abilityName":"Bunny Protection","Damage":30,"Heal":25,}
+            {"abilityName": "Bunny Heal", "Damage": 0, "Heal": 50},
+            {"abilityName": "Bunny Shield", "Damage": 25, "Heal": 30},
+            {"abilityName": "Bunny Protection", "Damage": 30, "Heal": 25}
         ]
-        self.name = name
-        self.health = health
-        self.damage = damage
-        self.shield = shield
-        self.inventory = inventory
 
 #Penguin is damage
-class Penguin():
+class Penguin(Character):
     def __init__(self, name, health, damage, shield, inventory):
+        super().__init__(name, health, damage, shield, inventory)
         self.abilities = [
-            {"abilityName":"Penguin Slap","Damage":44,"Heal":0,},
-            {"abilityName":"Penguin Punch","Damage":65,"Heal":0,},
-            {"abilityName":"Penguin Slide","Damage":5,"Heal":50,},
-            {"abilityName":"Penguin Beak Attack","Damage":35,"Heal":0,},
-            {"abilityName":"Penguin Stomp","Damage":random.randint(25,50),"Heal":1,}
+            {"abilityName": "Penguin Slap", "Damage": 44, "Heal": 0},
+            {"abilityName": "Penguin Punch", "Damage": 65, "Heal": 0},
+            {"abilityName": "Penguin Slide", "Damage": 5, "Heal": 50},
+            {"abilityName": "Penguin Beak Attack", "Damage": 35, "Heal": 0},
+            {"abilityName": "Penguin Stomp", "Damage": random.randint(25, 50), "Heal": 1}
         ]
-        self.name = name
-        self.health = health
-        self.damage = damage
-        self.shield = shield
-        self.inventory = inventory
 
 while True:
     classify = input("What class would you like to be? Damage, Tank, Healer, Support, Poison, Sniper, Hypnotist. ").lower()
@@ -161,15 +142,21 @@ def battle():
         print(f"{character.name} is now attacking!")
         time.sleep(2)
         print(f"What will {character.name} do? ")
+        time.sleep(0.5)
         print("1. Use normal attack")
+        time.sleep(0.5)
         print("2. Use item in inventory")
+        time.sleep(0.5)
         print("3. Use ability")
+        time.sleep(0.5)
         print("4. Run away")
         action = int(input("Write 1, 2, 3, or 4: "))
         if action == 1:
             print(f"{character.name} did {character.damage} damage to {goblin.name}!")
             goblin.health = goblin.health - character.damage
             time.sleep(2)
+            if goblin.health <= 0:
+                goblin.health = 0
             print(f"{goblin.name} is now at {goblin.health} health.")
             if goblin.health <= 0:
                 print(f"{goblin.name} has been defeated!")
@@ -193,9 +180,12 @@ def battle():
             time.sleep(2)
             print(f"{character.name} did {chosen['Damage']} damage to {goblin.name}!")
             time.sleep(2)
+            if goblin.health <= 0:
+                goblin.health = 0
             print(f"{goblin.name} is now at {goblin.health} health.")
             time.sleep(2)
             print(f"{character.name} is now at {character.health} health.")
+            time.sleep(2)
             if goblin.health <= 0:
                 print(f"{goblin.name} has been defeated!")
                 return
@@ -211,6 +201,7 @@ def battle():
         character.health = character.health - goblin.damage
         time.sleep(2)
         print(f"{character.name} is now at {character.health} health.")
+        time.sleep(2)
         if character.health <= 0:
             print(f"{character.name} has been defeated!")
             return
