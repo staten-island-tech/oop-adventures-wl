@@ -20,7 +20,6 @@ class Cat():
         self.health = health
         
         self.shield = shield
-    
         self.inventory = inventory
 
 #Falcon is sniper
@@ -32,13 +31,11 @@ class Falcon():
             {"abilityName":"Falcon Screech","dmg":50,"heal":0,},
             {"abilityName":"Falcon Claw","dmg":40,"heal":0,},
             {"abilityName":"Falcon Beak","dmg":40,"heal":0,}
-            
         ]
         self.name = name
         self.health = health
         
         self.shield = shield
-        
         self.inventory = inventory
 
 #Snake is poison
@@ -49,14 +46,11 @@ class Snake():
             {"abilityName":"Snake Crush","dmg":40,"heal":0,},
             {"abilityName":"Snake Fangs","dmg":40,"heal":0,},
             {"abilityName":"Snake Hiss","dmg":20,"heal":10,}
-
-            
         ]
         self.name = name
         self.health = health
     
         self.shield = shield
-       
         self.inventory = inventory
 
 #Frog is support
@@ -66,14 +60,11 @@ class Frog():
             {"abilityName":"Frog Boost","dmg":33,"heal":0,},
             {"abilityName":"Frog Assist","dmg":20,"heal":30},
             {"abilityName":"Frog Vial","dmg":10,"heal":random.randint(50,67),}
-           
-            
         ]
         self.name = name
         self.health = health
         
         self.shield = shield
-       
         self.inventory = inventory
 
 #Shark is tank
@@ -85,13 +76,11 @@ class Shark():
             {"abilityName":"Shark Tail Swing","dmg":25,"heal":25,},
             {"abilityName":"Shark Skin","dmg":33,"heal":0,},
             {"abilityName":"Shark Teeth","dmg":67,"heal":1}
-           
         ]
         self.name = name
         self.health = health
         
         self.shield = shield
-        
         self.inventory = inventory
 
 #Bunny is healer
@@ -101,13 +90,11 @@ class Bunny():
             {"abilityName":"Bunny Heal","dmg":0,"heal":50,},
             {"abilityName":"Bunny Shield","dmg":25,"heal":30},
             {"abilityName":"Bunny Protection","dmg":30,"heal":25,}
-            
         ]
         self.name = name
         self.health = health
         
         self.shield = shield
-        
         self.inventory = inventory
 
 #Penguin is damage
@@ -119,14 +106,11 @@ class Penguin():
             {"abilityName":"Penguin Slide","dmg":5,"heal":50,},
             {"abilityName":"Penguin Beak Attack","dmg":35,"heal":0,},
             {"abilityName":"Penguin Stomp","dmg":random.randint(25,50),"heal":1,}
-
-            
         ]
         self.name = name
         self.health = health
         
         self.shield = shield
-        
         self.inventory = inventory
 
 while True:
