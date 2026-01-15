@@ -166,6 +166,7 @@ def battle():
         elif action == 2:
             if not character.inventory:
                 print("Inventory is still in the works and will come out in v2.0.")
+                continue
 
         elif action == 3:
             for i, ability in enumerate(character.abilities, start=1):
@@ -194,7 +195,11 @@ def battle():
         elif action == 4:
             print(f"{character.name} ran away!")
             return
-
+        
+        else: 
+            print("This is not an action.")
+            continue
+        
         time.sleep(3)
         print(" ")
         print(f"{goblin.name} is now attacking!")
