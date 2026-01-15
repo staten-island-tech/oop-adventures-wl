@@ -2,14 +2,14 @@ import random
 import time
 #Wow an enemy
 class Enemy():
-    def __init__(self, name, health, damage):
+    def __init__(self, name, damage):
         self.name = name
-        self.health = health
+        self.health = 500
         self.damage = damage
 
 #Cat is hypnotist
 class Cat():
-    def __init__(self, name, health, damage, shield, inventory):
+    def __init__(self, name, health, shield, inventory):
         self.abilities = [
             {"abilityName":"Cat Meow","dmg":0,"heal":25,},
             {"abilityName":"Cat Claws","dmg":50,"heal":0,},
@@ -18,14 +18,14 @@ class Cat():
         ]
         self.name = name
         self.health = health
-        self.damage = damage
+        
         self.shield = shield
     
         self.inventory = inventory
 
 #Falcon is sniper
 class Falcon():
-    def __init__(self, name, health, damage, shield, inventory):
+    def __init__(self, name, health, shield, inventory):
         self.abilities = [
             {"abilityName":"Falcon Dive","dmg":75,"heal":0,},
             {"abilityName":"Falcon Feathers","dmg":20,"heal":0,},
@@ -36,14 +36,14 @@ class Falcon():
         ]
         self.name = name
         self.health = health
-        self.damage = damage
+        
         self.shield = shield
         
         self.inventory = inventory
 
 #Snake is poison
 class Snake():
-    def __init__(self, name, health, damage, shield, inventory):
+    def __init__(self, name, health, shield, inventory):
         self.abilities = [
             {"abilityName":"Snake Venom","dmg":33,"heal":0,},
             {"abilityName":"Snake Crush","dmg":40,"heal":0,},
@@ -54,14 +54,14 @@ class Snake():
         ]
         self.name = name
         self.health = health
-        self.damage = damage
+    
         self.shield = shield
        
         self.inventory = inventory
 
 #Frog is support
 class Frog():
-    def __init__(self, name, health, damage, shield, inventory):
+    def __init__(self, name, health, shield, inventory):
         self.abilities = [
             {"abilityName":"Frog Boost","dmg":33,"heal":0,},
             {"abilityName":"Frog Assist","dmg":20,"heal":30},
@@ -71,14 +71,14 @@ class Frog():
         ]
         self.name = name
         self.health = health
-        self.damage = damage
+        
         self.shield = shield
        
         self.inventory = inventory
 
 #Shark is tank
 class Shark():
-    def __init__(self, name, health, damage, shield, inventory):
+    def __init__(self, name, health, shield, inventory):
         self.abilities = [
             {"abilityName":"Shark Attack","dmg":50,"heal":0,},
             {"abilityName":"Shark Fin","dmg":45,"heal":30},
@@ -89,14 +89,14 @@ class Shark():
         ]
         self.name = name
         self.health = health
-        self.damage = damage
+        
         self.shield = shield
         
         self.inventory = inventory
 
 #Bunny is healer
 class Bunny():
-    def __init__(self, name, health, damage, shield, inventory):
+    def __init__(self, name, health, shield, inventory):
         self.abilities = [
             {"abilityName":"Bunny Heal","dmg":0,"heal":50,},
             {"abilityName":"Bunny Shield","dmg":25,"heal":30},
@@ -105,14 +105,14 @@ class Bunny():
         ]
         self.name = name
         self.health = health
-        self.damage = damage
+        
         self.shield = shield
         
         self.inventory = inventory
 
 #Penguin is damage
 class Penguin():
-    def __init__(self, name, health, damage, shield, inventory):
+    def __init__(self, name, health, shield, inventory):
         self.abilities = [
             {"abilityName":"Penguin Slap","dmg":44,"heal":0,},
             {"abilityName":"Penguin Punch","dmg":65,"heal":0,},
@@ -124,7 +124,7 @@ class Penguin():
         ]
         self.name = name
         self.health = health
-        self.damage = damage
+        
         self.shield = shield
         
         self.inventory = inventory
