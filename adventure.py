@@ -23,9 +23,9 @@ class Cat(Character):
         super().__init__(name, health, damage, shield, inventory)
         self.abilities = [
             {"abilityName": "Cat Meow", "Damage": 0, "Heal": 25},
-            {"abilityName": "Cat Eyes", "Damage": random.randint(0, 67), "Heal": 0},
+            {"abilityName": "Cat Eyes", "Damage": random.randint(0, 40), "Heal": 5},
             {"abilityName": "Cat Claws", "Damage": 50, "Heal": 0},
-            {"abilityName": "Angry Cat Attack", "Damage": 75, "Heal": 0}
+            {"abilityName": "Angry Cat Attack", "Damage": random.randint(50, 75), "Heal": 0}
         ]
 
 #Falcon is sniper
@@ -35,30 +35,33 @@ class Falcon(Character):
         self.abilities = [
             {"abilityName": "Falcon Dive", "Damage": 75, "Heal": 0},
             {"abilityName": "Falcon Feathers", "Damage": 20, "Heal": 0},
-            {"abilityName": "Falcon Screech", "Damage": 50, "Heal": 0},
+            {"abilityName": "Falcon Screech", "Damage": 35, "Heal": 0},
             {"abilityName": "Falcon Claw", "Damage": 40, "Heal": 0},
-            {"abilityName": "Falcon Beak", "Damage": 40, "Heal": 0}
+            {"abilityName": "Falcon Beak", "Damage": 50, "Heal": 0}
         ]
 
 #Snake is poison
+#ADD PERIODIC POISON
 class Snake(Character):
     def __init__(self, name, health, damage, shield, inventory):
         super().__init__(name, health, damage, shield, inventory)
         self.abilities = [
             {"abilityName": "Snake Venom", "Damage": 33, "Heal": 0},
-            {"abilityName": "Snake Crush", "Damage": 40, "Heal": 0},
-            {"abilityName": "Snake Fangs", "Damage": 40, "Heal": 0},
-            {"abilityName": "Snake Hiss", "Damage": 20, "Heal": 10}
+            {"abilityName": "Snake Crush", "Damage": 50, "Heal": 0},
+            {"abilityName": "Snake Fangs", "Damage": 30, "Heal": 0},
+            {"abilityName": "Snake Hiss", "Damage": 20, "Heal": 15}
         ]
 
 #Frog is support
+#ADD PERIODIC HEALS
+#frog boost boosts dmg, frog assist boosts hp or shield
 class Frog(Character):
     def __init__(self, name, health, damage, shield, inventory):
         super().__init__(name, health, damage, shield, inventory)
         self.abilities = [
-            {"abilityName": "Frog Boost", "Damage": 33, "Heal": 0},
-            {"abilityName": "Frog Assist", "Damage": 20, "Heal": 30},
-            {"abilityName": "Frog Vial", "Damage": 10, "Heal": random.randint(50, 67)}
+            {"abilityName": "Frog Boost", "Damage": 20, "Heal": 5},
+            {"abilityName": "Frog Assist", "Damage": 5, "Heal": 20},
+            {"abilityName": "Frog Vial", "Damage": 10, "Heal": random.randint(25, 75)}
         ]
 
 #Shark is tank
@@ -67,10 +70,10 @@ class Shark(Character):
         super().__init__(name, health, damage, shield, inventory)
         self.abilities = [
             {"abilityName": "Shark Attack", "Damage": 50, "Heal": 0},
-            {"abilityName": "Shark Fin", "Damage": 45, "Heal": 30},
-            {"abilityName": "Shark Tail Swing", "Damage": 25, "Heal": 25},
-            {"abilityName": "Shark Skin", "Damage": 33, "Heal": 0},
-            {"abilityName": "Shark Teeth", "Damage": 67, "Heal": 1}
+            {"abilityName": "Shark Fin", "Damage": 40, "Heal": 15},
+            {"abilityName": "Shark Tail Swing", "Damage": 25, "Heal": 15},
+            {"abilityName": "Shark Skin", "Damage": 20, "Heal": 0},
+            {"abilityName": "Shark Teeth", "Damage": 50, "Heal": 10}
         ]
 
 #Bunny is healer
@@ -79,8 +82,8 @@ class Bunny(Character):
         super().__init__(name, health, damage, shield, inventory)
         self.abilities = [
             {"abilityName": "Bunny Heal", "Damage": 0, "Heal": 50},
-            {"abilityName": "Bunny Shield", "Damage": 25, "Heal": 30},
-            {"abilityName": "Bunny Protection", "Damage": 30, "Heal": 25}
+            {"abilityName": "Bunny Shield", "Damage": 10, "Heal": 30},
+            {"abilityName": "Bunny Protection", "Damage": 20, "Heal": 25}
         ]
 
 #Penguin is damage
@@ -133,7 +136,7 @@ time.sleep(2)
 
 print("Game starting...")
 time.sleep(2)
-goblin = Enemy("Goblin", 150, 25)
+goblin = Enemy("Goblin", 300, 25)
 
 def battle():
     print(f"{character.name} is now fighting {goblin.name}!")
