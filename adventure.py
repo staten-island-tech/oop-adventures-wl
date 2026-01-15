@@ -12,10 +12,10 @@ class Enemy():
 class Cat():
     def __init__(self, name, health, damage, shield, abilities, inventory):
         abilities = [
-            "Cat Meow",
-            "Cat Claws",
-            "Cat Eyes",
-            "Angry Cat Attack"
+            {"abilityName":"Cat Meow","dmg":0,"heal":25,},
+            {"abilityName":"Cat Claws","dmg":50,"heal":0,},
+            {"abilityName":"Cat Eyes","dmg":random(0,67),"heal":0,},
+            {"abilityName":"Angry Cat Attack","dmg":75,"heal":0,}
         ]
         self.name = name
         self.health = health
@@ -28,11 +28,12 @@ class Cat():
 class Falcon():
     def __init__(self, name, health, damage, shield, abilities, inventory):
         abilities = [
-            "Falcon Dive",
-            "Falcon Feathers",
-            "Falcon Screech",
-            "Falcon Claw",
-            "Falcon Beak"
+            {"abilityName":"Falcon Dive","dmg":75,"heal":0,},
+            {"abilityName":"Falcon Feathers","dmg":20,"heal":0,},
+            {"abilityName":"Falcon Screech","dmg":50,"heal":0,},
+            {"abilityName":"Falcon Claw","dmg":40,"heal":0,},
+            {"abilityName":"Falcon Beak","dmg":40,"heal":0,}
+            
         ]
         self.name = name
         self.health = health
@@ -45,10 +46,12 @@ class Falcon():
 class Snake():
     def __init__(self, name, health, damage, shield, abilities, inventory):
         abilities = [
-            "Snake Venom",
-            "Snake Crush",
-            "Snake Fangs",
-            "Snake Hiss"
+            {"abilityName":"Snake Venom","dmg":33,"heal":0,},
+            {"abilityName":"Snake Crush","dmg":40,"heal":0,},
+            {"abilityName":"Snake Fangs","dmg":40,"heal":0,},
+            {"abilityName":"Snake Hiss","dmg":20,"heal":10,}
+
+            
         ]
         self.name = name
         self.health = health
@@ -61,9 +64,11 @@ class Snake():
 class Frog():
     def __init__(self, name, health, damage, shield, abilities, inventory):
         abilities = [
-            "Frog Boost", #Raises damage
-            "Frog Assist", #Frog also attacks
-            "Frog Vial" #Raises health
+            {"abilityName":"Frog Boost","dmg":33,"heal":0,},
+            {"abilityName":"Frog Assist","dmg":20,"heal":30},
+            {"abilityName":"Frog Vial","dmg":10,"heal":random(50,67),}
+           
+            
         ]
         self.name = name
         self.health = health
@@ -76,11 +81,12 @@ class Frog():
 class Shark():
     def __init__(self, name, health, damage, shield, abilities, inventory):
         abilities = [
-            "Shark Attack",
-            "Shark Fin",
-            "Shark Tail Swing",
-            "Shark Skin",
-            "Shark Teeth"
+            {"abilityName":"Shark Attack","dmg":50,"heal":0,},
+            {"abilityName":"Shark Fin","dmg":45,"heal":30},
+            {"abilityName":"Shark Tail Swing","dmg":25,"heal":25,},
+            {"abilityName":"Shark Skin","dmg":33,"heal":0,},
+            {"abilityName":"Shark Teeth","dmg":67,"heal":1}
+           
         ]
         self.name = name
         self.health = health
@@ -93,9 +99,10 @@ class Shark():
 class Bunny():
     def __init__(self, name, health, damage, shield, abilities, inventory):
         abilities = [
-            "Bunny Heal",
-            "Bunny Shield",
-            "Bunny Protection"
+            {"abilityName":"Bunny Heal","dmg":0,"heal":50,},
+            {"abilityName":"Bunny Shield","dmg":25,"heal":30},
+            {"abilityName":"Bunny Protection","dmg":30,"heal":25,}
+            
         ]
         self.name = name
         self.health = health
@@ -108,11 +115,13 @@ class Bunny():
 class Penguin():
     def __init__(self, name, health, damage, shield, abilities, inventory):
         abilities = [
-            "Penguin Slap",
-            "Penguin Punch",
-            "Penguin Slide",
-            "Penguin Beak Attack",
-            "Penguin Stomp"
+            {"abilityName":"Penguin Slap","dmg":44,"heal":0,},
+            {"abilityName":"Penguin Punch","dmg":65,"heal":0,},
+            {"abilityName":"Penguin Slide","dmg":5,"heal":50,},
+            {"abilityName":"Penguin Beak Attack","dmg":35,"heal":0,},
+            {"abilityName":"Penguin Stomp","dmg":random(25,50),"heal":1,}
+
+            
         ]
         self.name = name
         self.health = health
@@ -159,3 +168,4 @@ def battle():
     
 
 battle()
+
