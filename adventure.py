@@ -91,22 +91,22 @@ class Penguin(Character):
     def __init__(self, name, health, damage, shield, inventory):
         super().__init__(name, health, damage, shield, inventory)
         self.abilities = [
-            {"abilityName": "Penguin Slap", "Damage": 44, "Heal": 0},
-            {"abilityName": "Penguin Punch", "Damage": 65, "Heal": 0},
-            {"abilityName": "Penguin Slide", "Damage": 5, "Heal": 50},
-            {"abilityName": "Penguin Beak Attack", "Damage": 35, "Heal": 0},
-            {"abilityName": "Penguin Stomp", "Damage": random.randint(25, 50), "Heal": 1}
+            {"abilityName": "Penguin Slap", "Damage": 35, "Heal": 0},
+            {"abilityName": "Penguin Punch", "Damage": 50, "Heal": 0},
+            {"abilityName": "Penguin Slide", "Damage": 5, "Heal": 40},
+            {"abilityName": "Penguin Beak Attack", "Damage": 25, "Heal": 10},
+            {"abilityName": "Penguin Stomp", "Damage": random.randint(15, 40), "Heal": 0}
         ]
 
 while True:
     classify = input("What class would you like to be? Damage, Tank, Healer, Support, Poison, Sniper, Hypnotist. ").lower()
     if classify == ("damage"):
         naming = input("What is your name? ")
-        character = Penguin(naming, 175, 10, 0, [])
+        character = Penguin(naming, 175, 30, 0, [])
         break
     if classify == ("tank"):
         naming = input("What is your name? ")
-        character = Shark(naming, 250, 10, 0, [])
+        character = Shark(naming, 250, 10, 10, [])
         break
     elif classify == ("healer"):
         naming = input("What is your name? ")
@@ -118,15 +118,15 @@ while True:
         break
     elif classify == ("poison"):
         naming = input("What is your name? ")
-        character = Snake(naming, 200, 10, 0, [])
+        character = Snake(naming, 200, 15, 0, [])
         break
     elif classify == ("sniper"):
         naming = input("What is your name? ")
-        character = Falcon(naming, 175, 10, 0, [])
+        character = Falcon(naming, 175, 25, 0, [])
         break
     elif classify == ("hypnotist"):
         naming = input("What is your name? ")
-        character = Cat(naming, 200, 10, 0, [])
+        character = Cat(naming, 200, random.randint(5, 25), 0, [])
         break
     else:
         print("Class not found")
@@ -190,7 +190,7 @@ def battle():
             print(f"{goblin.name} is now at {goblin.health} health.")
             time.sleep(2)
             print(f"{character.name} is now at {character.health} health.")
-            time.sleep(2)
+            time.sleep(1)
             if goblin.health <= 0:
                 print(f"{goblin.name} has been defeated!")
                 return
@@ -203,7 +203,7 @@ def battle():
             print("This is not an action.")
             continue
         
-        time.sleep(3)
+        time.sleep(2)
         print(" ")
         print(f"{goblin.name} is now attacking!")
         time.sleep(2)
