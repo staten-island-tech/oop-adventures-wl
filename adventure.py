@@ -1,6 +1,5 @@
-import time
 import random
-
+import time
 #Wow an enemy
 class Enemy():
     def __init__(self, name, health, damage):
@@ -130,42 +129,87 @@ class Penguin():
         self.abilities = abilities
         self.inventory = inventory
 
+while True:
+    classify = input("What class would you like to be? Damage, Tank, Healer, Support, Poison, Sniper, Hypnotist. ").lower()
+    if classify == ("damage"):
+        naming = input("What is your name? ")
+        character = Penguin(naming, 100, 10, 0, "", [""])
+        break
+    if classify == ("tank"):
+        naming = input("What is your name? ")
+        character = Shark(naming, 100, 10, 0, "", [""])
+        break
+    elif classify == ("healer"):
+        naming = input("What is your name? ")
+        character = Bunny(naming, 100, 10, 0, "", [""])
+        break
+    elif classify == ("support"):
+        naming = input("What is your name? ")
+        character = Frog(naming, 100, 10, 0, "", [""])
+        break
+    elif classify == ("poison"):
+        naming = input("What is your name? ")
+        character = Snake(naming, 100, 10, 0, "", [""])
+        break
+    elif classify == ("sniper"):
+        naming = input("What is your name? ")
+        character = Falcon(naming, 100, 10, 0, "", [""])
+        break
+    elif classify == ("hypnotist"):
+        naming = input("What is your name? ")
+        character = Cat(naming, 100, 10, 0, "", [""])
+        break
+    else:
+        print("Class not found")
 
-classify = input("What class would you like to be? Damage, Tank, Healer, Support, Poison, Sniper, Hypnotist. ")
-if classify == ("Damage") or ("damage"):
-    naming = input("What is your name? ")
-    luke = Penguin(naming, 100, 10, 0, "", [""])
-if classify == ("Tank") or ("tank"):
-    naming = input("What is your name? ")
-    luke = Shark(naming, 100, 10, 0, "", [""])
-elif classify == ("Healer") or ("healer"):
-    naming = input("What is your name? ")
-    luke = Bunny(naming, 100, 10, 0, "", [""])
-elif classify == ("Support") or ("support"):
-    naming = input("What is your name? ")
-    luke = Frog(naming, 100, 10, 0, "", [""])
-elif classify == ("Poison") or ("poison"):
-    naming = input("What is your name? ")
-    luke = Snake(naming, 100, 10, 0, "", [""])
-elif classify == ("Sniper") or ("sniper"):
-    naming = input("What is your name? ")
-    luke = Falcon(naming, 100, 10, 0, "", [""])
-elif classify == ("Hypnotist") or ("hypnotist"):
-    naming = input("What is your name? ")
-    luke = Cat(naming, 100, 10, 0, "", [""])
-else:
-    print("Class not found")
+print(character.__dict__)
 
+print("Game starting...")
+time.sleep(2)
 goblin = Enemy("Goblin", 75, 10)
-print(luke.__dict__)
-
 
 def battle():
-    print(f"{luke.name} is now fighting {goblin.name}!")
-    time.sleep(1)
-    action = input("What will you do? ")
+    print(f"{character.name} is now fighting {goblin.name}!")
+    time.sleep(2)
+    print(f"{character.name} is now attacking!")
+    time.sleep(2)
+    print(f"What will {character.name} do? ")
     print("1. Use normal attack")
+    print("2. Use item in inventory")
+    print("3. Use ability")
+    print("4. Run away")
+    action = int(input("Write 1, 2, 3, or 4: "))
+    if action == 1:
+        print(f"{character.name} did {character.damage} to {goblin.name}!")
+        goblin.health = goblin.health - character.damage
+        time.sleep(2)
+        print(f"{goblin.name} is now at {goblin.health}.")
+        if goblin.health <= 0:
+            print(f"{goblin.name} has been defeated!")
+            
+    elif action == 2:
+        if not character.inventory:
+            print("There is nothing in your inventory.")
     
+    elif action == 3:
+        for i, ability in enumerate(character.abilities, start = 1):
+            print(f"{i}. {ability}")
+        chooseability = int(input("Which ability would you like to use? "))
+        if chooseability == 1:
+            print("cool")
+    
+    elif action == 4:
+        print("I'm going to roast you.")
+
+    time.sleep(3)
+    print(f"{goblin.name} is now attacking!")
+    time.sleep(2)
+    print(f"{goblin.name} did {goblin.damage} to {character.name}!")
+    character.health = character.health - goblin.damage
+    time.sleep(2)
+    print(f"{character.name} is now at {character.health}.")
+    if character.health <= 0:
+        print(f"{character.name} has been defeated!")
+        
 
 battle()
-
