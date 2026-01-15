@@ -164,18 +164,24 @@ def battle():
     print(f"{luke.name} is now fighting {goblin.name}!")
     time.sleep(2)
     print(f"{luke.name} is now attacking!")
+    time.sleep(2)
     print(f"What will {luke.name} do? ")
+    time.sleep(1)
     print("1. Use normal attack")
+    time.sleep(1)
     print("2. Use item in inventory")
+    time.sleep(1)
     print("3. Use ability")
+    time.sleep(1)
     print("4. Run away")
+    time.sleep(1)
     action = int(input("Write 1, 2, 3, or 4: "))
     if action == 1:
         while True:
-            print(f"{luke.name} did {luke.damage} to {goblin.name}!")
+            print(f"{luke.name} did {luke.damage} damage to {goblin.name}!")
             goblin.health = goblin.health - luke.damage
             time.sleep(2)
-            print(f"{goblin.name} is now at {goblin.health}.")
+            print(f"{goblin.name} is now at {goblin.health} health.")
             if goblin.health <= 0:
                 print(f"{goblin.name} has been defeated!")
                 break
@@ -189,6 +195,14 @@ def battle():
         chooseability = int(input("Which ability would you like to use? "))
         if chooseability == 1:
             print("cool")
+        elif chooseability == 1:
+            print("cool")
+        elif chooseability == 1:
+            print("cool")
+        elif chooseability == 1:
+            print("cool")
+        else:
+            
     
     elif action == 4:
         print("I'm going to roast you.")
