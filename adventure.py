@@ -146,7 +146,7 @@ def battle():
         print(f"{character.name} is now attacking!")
         time.sleep(2)
         print(f"What will {character.name} do? ")
-        time.sleep(0.5)
+        time.sleep(1)
         print("1. Use normal attack")
         time.sleep(0.5)
         print("2. Use item in inventory")
