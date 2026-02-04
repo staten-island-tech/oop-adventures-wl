@@ -1,5 +1,6 @@
 import random
 import time
+#add levels, chests, equippables, more enemies, fix random randint somehow
 
 #Wow an enemy
 class Enemy:
