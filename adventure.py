@@ -139,6 +139,15 @@ print("Game starting...")
 time.sleep(2)
 goblin = Enemy("Goblin", 300, 25)
 
+message = [
+    f"Alright, you have chosen class {character.__class__}.",
+    "Now, let's test your skills by fighting a goblin!"
+    ]
+for line in message:
+    time.sleep(2)
+    print(line)
+    break
+
 def battle():
     print(f"{character.name} is now fighting {goblin.name}!")
     time.sleep(2)
