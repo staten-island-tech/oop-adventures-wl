@@ -58,7 +58,8 @@ def chest():
         rarity = "Mythic"
 
     print(f"You have recieved {goldgain} gold and found a {rarity} {itemgot}!")
-    character.gold == character.gold + goldgain
+    int(character.gold) == int(character.gold) + int(goldgain)
+    itemgot.append(character.inventory)
     return itemgot, goldgain
 chest()
 print(character.inventory)
