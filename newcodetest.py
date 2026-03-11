@@ -34,11 +34,11 @@ def commonchest():
     goldgain = random.randint(30,80)
 
     loottable = {
-    "Common": ["e"],
-    "Rare": ["r"],
-    "Epic": ["t"],
-    "Legendary": ["y"],
-    "Mythic": ["u"]
+    "Common": ['e'],
+    "Rare": ['r'],
+    "Epic": ['t'],
+    "Legendary": ['y'],
+    "Mythic": ['u'] 
     }
 
     raritypercent = {
@@ -53,7 +53,7 @@ def commonchest():
 
     for i in range(itemcount):
         rarity = random.choices(
-            list(raritypercent),
+            list(raritypercent.keys()),
             weights = raritypercent.values(),
             k=1
         )[0]
