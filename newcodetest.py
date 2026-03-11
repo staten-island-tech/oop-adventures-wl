@@ -32,6 +32,7 @@ while True:
         
 def commonchest():
     goldgain = random.randint(30,80)
+    itemsgot = []
 
     loottable = {
     "Common": ['e'],
@@ -42,11 +43,11 @@ def commonchest():
     }
 
     raritypercent = {
-        "Common": 50,
-        "Rare": 25,
-        "Epic": 15,
-        "Legendary": 8,
-        "Mythic": 2
+        "Common": 51,
+        "Rare": 30,
+        "Epic": 14,
+        "Legendary": 4,
+        "Mythic": 1
     }
 
     itemcount = random.randint(5, 7)
@@ -60,12 +61,16 @@ def commonchest():
 
         itemgot = random.choice(loottable[rarity])
 
-        print(f"You found a {rarity} item: {itemgot}")
+        if rarity == ("Epic"):
+            print(f"You have found an Epic {itemgot}!")
+        else:
+            print(f"You have found a {rarity} {itemgot}!")
 
-        print(f"You have recieved {goldgain} gold and found a {rarity} {itemgot}!")
+        itemsgot.append(itemgot)
         character.inventory.append(itemgot)
-        character.gold += goldgain
-        return itemgot, goldgain
+
+    character.gold += goldgain
+    return itemgot, goldgain
 commonchest()
 print(character.inventory)
 print(character.gold)
