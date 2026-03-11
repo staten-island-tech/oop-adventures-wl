@@ -30,37 +30,42 @@ while True:
         character = Penguin(naming, 175, 30, 0, [], [], [], "Penguin", 0)
         break
         
-def chest():
+def commonchest():
     goldgain = random.randint(30,80)
 
-    commonitem = ["e"]
-    rareitem = ["r"]
-    epicitem = ["t"]
-    legendaryitem = ["y"]
-    mythicitem = ["u"]
+    loottable = {
+    "Common": ["e"],
+    "Rare": ["r"],
+    "Epic": ["t"],
+    "Legendary": ["y"],
+    "Mythic": ["u"]
+    }
 
-    decider = random.randint(1,100)
+    raritypercent = {
+        "Common": 50,
+        "Rare": 25,
+        "Epic": 15,
+        "Legendary": 8,
+        "Mythic": 2
+    }
 
-    if decider < 51:
-        itemgot = commonitem
-        rarity = "Common"
-    elif decider < 75:
-        itemgot = rareitem
-        rarity = "Rare"
-    elif decider < 89:
-        itemgot = epicitem
-        rarity = "Epic"
-    elif decider < 97:
-        itemgot = legendaryitem
-        rarity = "Legendary"
-    else:
-        itemgot = mythicitem
-        rarity = "Mythic"
+    itemcount = random.randint(5, 7)
 
-    print(f"You have recieved {goldgain} gold and found a {rarity} {itemgot}!")
-    int(character.gold) == int(character.gold) + int(goldgain)
-    itemgot.append(character.inventory)
-    return itemgot, goldgain
-chest()
+    for i in range(itemcount):
+        rarity = random.choices(
+            list(raritypercent),
+            weights = raritypercent.values(),
+            k=1
+        )[0]
+
+        itemgot = random.choice(loottable[rarity])
+
+        print(f"You found a {rarity} item: {itemgot}")
+
+        print(f"You have recieved {goldgain} gold and found a {rarity} {itemgot}!")
+        character.inventory.append(itemgot)
+        character.gold += goldgain
+        return itemgot, goldgain
+commonchest()
 print(character.inventory)
 print(character.gold)
