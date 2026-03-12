@@ -372,44 +372,52 @@ def battle():
             print(f"{character.name} has been defeated!")
             return
         
-# battle()
+#battle()
 print("You have gained 10 XP!")
 time.sleep(1)
 print("You have recieved a chest!")
 
-def chest():
+def commonchest():
     goldgain = random.randint(30,80)
+    itemsgot = []
 
-    commonitem = ["placeholder1"]
-    rareitem = ["placeholder2"]
-    epicitem = ["placeholder3"]
-    legendaryitem = ["placeholder4"]
-    mythicitem = ["placeholder5"]
+    loottable = {
+    "Common": ['e'],
+    "Rare": ['r'],
+    "Epic": ['t'],
+    "Legendary": ['y'],
+    "Mythic": ['u'] 
+    }
 
-    decider = random.randint(1,100)
+    raritypercent = {
+        "Common": 51,
+        "Rare": 30,
+        "Epic": 14,
+        "Legendary": 4,
+        "Mythic": 1
+    }
 
-    if decider < 51:
-        itemgot = commonitem
-        rarity = "Common"
-    elif decider < 75:
-        itemgot = rareitem
-        rarity = "Rare"
-    elif decider < 89:
-        itemgot = epicitem
-        rarity = "Epic"
-    elif decider < 97:
-        itemgot = legendaryitem
-        rarity = "Legendary"
-    else:
-        itemgot = mythicitem
-        rarity = "Mythic"
+    itemcount = random.randint(1, 3)
 
+    for i in range(itemcount):
+        rarity = random.choices(
+            list(raritypercent.keys()),
+            weights = raritypercent.values(),
+            k=1
+        )[0]
 
-    character.inventory.append(itemgot)
-    character.gold.add(goldgain)
-    print(f"You have recieved {goldgain} gold and found a {rarity} {itemgot}!")
+        itemgot = random.choice(loottable[rarity])
+
+        if rarity == ("Epic"):
+            print(f"You have found an Epic {itemgot}!")
+        else:
+            print(f"You have found a {rarity} {itemgot}!")
+
+        itemsgot.append(itemgot)
+        character.inventory.append(itemgot)
+
+    character.gold += goldgain
     return itemgot, goldgain
-
-chest()
+commonchest()
 print(character.inventory)
 print(character.gold)
