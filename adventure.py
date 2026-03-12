@@ -173,7 +173,7 @@ time.sleep(1)
 
 goblin = Enemy("Goblin", 200, 25)
 
-def battle():
+def tutorialbattle():
     print(f"{character.name} is now fighting {goblin.name}!")
     time.sleep(2)
     abilityuse = 0
@@ -211,6 +211,102 @@ def battle():
                     time.sleep(2)
                     print(line)
                     break
+
+        elif action == 2:
+            if not character.inventory:
+                print("Inventory is still in the works and will come out in v2.0.")
+                continue
+
+        elif action == 3:
+            if abilityuse >= 3:
+                print("You have run out of ability usages this battle.")
+                continue
+            for i, ability in enumerate(character.abilities, start=1):
+                print(f"{i}. {ability['abilityName']} (Damage: {ability['Damage']}, Heal: {ability['Heal']})")
+
+            chooseability = int(input("Which ability would you like to use? ")) - 1
+            chosen = character.abilities[chooseability]
+
+            goblin.health -= chosen["Damage"]
+            character.health += chosen["Heal"]
+
+            print(f"{character.name} used {chosen['abilityName']}!")
+            abilityuse = abilityuse + 1
+            time.sleep(2)
+            print(f"{character.name} did {chosen['Damage']} damage to {goblin.name}!")
+            time.sleep(2)
+            if goblin.health <= 0:
+                goblin.health = 0
+            print(f"{goblin.name} is now at {goblin.health} health.")
+            time.sleep(2)
+            print(f"{character.name} is now at {character.health} health.")
+            time.sleep(1)
+            if goblin.health <= 0:
+                print(f"{goblin.name} has been defeated!")
+                messages[
+                    "Congratulations!"
+                    "You have defeated your first goblin!"
+                    "After winning a battle, you gain XP and a chest."
+                    "After every battle, win or loss, you can earn items, complete quests, and use the shop."
+                    "This way, you can grow more powerful and take on stronger enemies."
+                ]
+                for line in messages:
+                    time.sleep(2)
+                    print(line)
+                    break
+
+        elif action == 4:
+            print(f"{character.name} ran away!")
+            return
+        
+        else: 
+            print("This is not an action.")
+            continue
+        
+        time.sleep(2)
+        print(" ")
+        print(f"{goblin.name} is now attacking!")
+        time.sleep(2)
+        print(f"{goblin.name} did {goblin.damage} damage to {character.name}!")
+        character.health = character.health - goblin.damage
+        time.sleep(2)
+        print(f"{character.name} is now at {character.health} health.")
+        print(" ")
+        time.sleep(2)
+        if character.health <= 0:
+            print(f"{character.name} has been defeated!")
+            return
+
+tutorialbattle()
+
+def battle():
+    print(f"{character.name} is now fighting {goblin.name}!")
+    time.sleep(2)
+    abilityuse = 0
+
+    while character.health > 0 and goblin.health > 0:
+        print(f"{character.name} is now attacking!")
+        time.sleep(2)
+        print(f"What will {character.name} do? ")
+        time.sleep(1)
+        print("1. Use normal attack")
+        time.sleep(0.5)
+        print("2. Use item in inventory")
+        time.sleep(0.5)
+        print("3. Use ability")
+        time.sleep(0.5)
+        print("4. Run away")
+        action = int(input("Write 1, 2, 3, or 4: "))
+        if action == 1:
+            print(f"{character.name} did {character.damage} damage to {goblin.name}!")
+            goblin.health = goblin.health - character.damage
+            time.sleep(2)
+            if goblin.health <= 0:
+                goblin.health = 0
+            print(f"{goblin.name} is now at {goblin.health} health.")
+            if goblin.health <= 0:
+                print(f"{goblin.name} has been defeated!")
+                break
 
         elif action == 2:
             if not character.inventory:
