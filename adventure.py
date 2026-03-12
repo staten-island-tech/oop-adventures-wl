@@ -26,7 +26,7 @@ class Enemy:
 
 class TutorialGoblin(Enemy):
     def __init__(self, name, health, damage):
-        super().__init__(self, name, health, damage)
+        super().__init__(name, health, damage)
         self.name = name
         self.health = health
         self.damage = damage
@@ -134,7 +134,7 @@ while True:
     classify = input("What class would you like to be? Damage, Tank, Healer, Support, Poison, Sniper, Hypnotist. ").lower()
     if classify == ("damage"):
         naming = input("What is your name? ")
-        character = Penguin(naming, 175, 300, 0, [], [], [], "Penguin", 0)
+        character = Penguin(naming, 175, 30, 0, [], [], [], "Penguin", 0)
         break
     if classify == ("tank"):
         naming = input("What is your name? ")
@@ -178,7 +178,7 @@ print("Now, let's test your skills by fighting a goblin!")
 print("")
 time.sleep(1)
 
-tutorialgoblin = TutorialGoblin("Goblin", 200, 25)
+tutorialgoblin = TutorialGoblin("Goblin", 200, 250)
 
 def tutorialbattle():
     print(f"{character.name} is now fighting {tutorialgoblin.name}!")
