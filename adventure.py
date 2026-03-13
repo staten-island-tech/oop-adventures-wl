@@ -181,11 +181,12 @@ time.sleep(1)
 tutorialgoblin = TutorialGoblin("Goblin", 200, 250)
 
 def tutorialbattle():
+    health = character.health
     print(f"{character.name} is now fighting {tutorialgoblin.name}!")
     time.sleep(2)
     abilityuse = 0
 
-    while character.health > 0 and tutorialgoblin.health > 0:
+    while health > 0 and tutorialgoblin.health > 0:
         print(f"{character.name} is now attacking!")
         time.sleep(2)
         print(f"What will {character.name} do? ")
@@ -235,7 +236,7 @@ def tutorialbattle():
             chosen = character.abilities[chooseability]
 
             tutorialgoblin.health -= chosen["Damage"]
-            character.health += chosen["Heal"]
+            health += chosen["Heal"]
 
             print(f"{character.name} used {chosen['abilityName']}!")
             abilityuse = abilityuse + 1
@@ -246,7 +247,7 @@ def tutorialbattle():
                 tutorialgoblin.health = 0
             print(f"{tutorialgoblin.name} is now at {tutorialgoblin.health} health.")
             time.sleep(2)
-            print(f"{character.name} is now at {character.health} health.")
+            print(f"{character.name} is now at {health} health.")
             time.sleep(1)
             if tutorialgoblin.health <= 0:
                 print(f"{tutorialgoblin.name} has been defeated!")
@@ -275,12 +276,14 @@ def tutorialbattle():
         print(f"{tutorialgoblin.name} is now attacking!")
         time.sleep(2)
         print(f"{tutorialgoblin.name} did {tutorialgoblin.damage} damage to {character.name}!")
-        character.health = character.health - tutorialgoblin.damage
+        health = health - tutorialgoblin.damage
         time.sleep(2)
-        print(f"{character.name} is now at {character.health} health.")
+        if health <= 0:
+            health = 0
+        print(f"{character.name} is now at {health} health.")
         print(" ")
         time.sleep(2)
-        if character.health <= 0:
+        if health <= 0:
             print(f"{character.name} has been defeated!")
             return
 
@@ -289,11 +292,12 @@ tutorialbattle()
 goblin = Enemy("Goblin", 200, 25)
 
 def battle():
+    health = character.health
     print(f"{character.name} is now fighting {goblin.name}!")
     time.sleep(2)
     abilityuse = 0
 
-    while character.health > 0 and goblin.health > 0:
+    while health > 0 and goblin.health > 0:
         print(f"{character.name} is now attacking!")
         time.sleep(2)
         print(f"What will {character.name} do? ")
@@ -333,7 +337,7 @@ def battle():
             chosen = character.abilities[chooseability]
 
             goblin.health -= chosen["Damage"]
-            character.health += chosen["Heal"]
+            health += chosen["Heal"]
 
             print(f"{character.name} used {chosen['abilityName']}!")
             abilityuse = abilityuse + 1
@@ -344,7 +348,7 @@ def battle():
                 goblin.health = 0
             print(f"{goblin.name} is now at {goblin.health} health.")
             time.sleep(2)
-            print(f"{character.name} is now at {character.health} health.")
+            print(f"{character.name} is now at {health} health.")
             time.sleep(1)
             if goblin.health <= 0:
                 print(f"{goblin.name} has been defeated!")
@@ -363,19 +367,22 @@ def battle():
         print(f"{goblin.name} is now attacking!")
         time.sleep(2)
         print(f"{goblin.name} did {goblin.damage} damage to {character.name}!")
-        character.health = character.health - goblin.damage
+        health = health - goblin.damage
         time.sleep(2)
-        print(f"{character.name} is now at {character.health} health.")
+        if health <= 0:
+            health = 0
+        print(f"{character.name} is now at {health} health.")
         print(" ")
         time.sleep(2)
-        if character.health <= 0:
+        if health <= 0:
             print(f"{character.name} has been defeated!")
             return
         
-#battle()
+battle()
 print("You have gained 10 XP!")
 time.sleep(1)
 print("You have recieved a chest!")
+time.sleep(1)
 
 def commonchest():
     goldgain = random.randint(30,80)
@@ -410,8 +417,10 @@ def commonchest():
 
         if rarity == ("Epic"):
             print(f"You have found an Epic {itemgot}!")
+            time.sleep(1)
         else:
             print(f"You have found a {rarity} {itemgot}!")
+            time.sleep(1)
 
         itemsgot.append(itemgot)
         character.inventory.append(itemgot)
