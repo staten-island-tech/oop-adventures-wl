@@ -114,7 +114,7 @@ class Penguin():
         self.inventory = inventory
 
 while True:
-    classify = input("What class would you like to be? Damage, Tank, Healer, Support, Poison, Sniper, Hypnotist. ").lower()
+    classify = input("What class would you like Zane to be? Damage, Tank, Healer, Support, Poison, Sniper, Hypnotist. ").lower()
     if classify == ("damage"):
         naming = input("What is your name? ")
         character = Penguin(naming, 100, 10, 0, "", [""])
